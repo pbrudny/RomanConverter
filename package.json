@@ -1,0 +1,13 @@
+{
+  "name": "RomanConverter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Piotr Brudny",
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
