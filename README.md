@@ -1,11 +1,12 @@
 ## Roman Converter
 It is a basic app translating arabic number to roman notation
 
+### Setup
 ```
 yarn install
 ```
 
-testing
+### Testing
 ```
 yarn test
 ```
