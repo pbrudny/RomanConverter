@@ -13,10 +13,8 @@ yarn convert [arabic number]
 
 #### Example
 ```
-yarn convert 123
+yarn convert 123 //=> The Roman notation of 123 is CXXIII
 ```
-//=> The Roman notation of 123 is CXXIII
-
 
 ### Testing
 ```
