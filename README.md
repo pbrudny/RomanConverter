@@ -6,12 +6,12 @@ It is a basic app translating arabic number to roman notation
 yarn install
 ```
 
-### Run
+### Usage
 ```
 yarn convert [arabic number]
 ```
 
-### Example
+#### Example
 ```
 yarn convert 123
 //=> The Roman notation of 123 is CXXIII
