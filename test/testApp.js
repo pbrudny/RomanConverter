@@ -10,38 +10,50 @@ describe('highestLiteral', () => {
     });
 });
 
-// describe('arabicToRoman', () => {
-//     describe('single literals', () => {
-//         it('returns the right roman number', () => {
-//             assert.equal(app.arabicToRoman(1), "I");
-//             assert.equal(arabicToRoman(5), "V");
-//             assert.equal(arabicToRoman(10), "X");
-//             assert.equal(arabicToRoman(50), "L");
-//             assert.equal(arabicToRoman(100), "C");
-//             assert.equal(arabicToRoman(500), "D");
-//             assert.equal(arabicToRoman(1000), "M");
-//         });
-//     });
+describe('arabicToRoman', () => {
+    describe('single literals', () => {
+        it('returns the right roman number', () => {
+            assert.equal(app.arabicToRoman(1), "I");
+            assert.equal(app.arabicToRoman(5), "V");
+            assert.equal(app.arabicToRoman(10), "X");
+            assert.equal(app.arabicToRoman(50), "L");
+            assert.equal(app.arabicToRoman(100), "C");
+            assert.equal(app.arabicToRoman(500), "D");
+            assert.equal(app.arabicToRoman(1000), "M");
+        });
+    });
 
-//     describe('basic numbers', () => {
-//         assert.equal(arabicToRoman(2), "II");
-//         assert.equal(arabicToRoman(4), "IV");
-//         assert.equal(arabicToRoman(13), "XIII");
-//         assert.equal(arabicToRoman(36), "XXXVI");
-//         assert.equal(arabicToRoman(350), "CCCL");
-//         assert.equal(arabicToRoman(1984), "MCMLXXXIV");
-//     });
+    describe('basic numbers', () => {
+        it('returns the right roman number', () => {
+            assert.equal(app.arabicToRoman(2), "II");
+            assert.equal(app.arabicToRoman(4), "IV");
+            assert.equal(app.arabicToRoman(13), "XIII");
+            assert.equal(app.arabicToRoman(36), "XXXVI");
+            assert.equal(app.arabicToRoman(350), "CCCL");
+            assert.equal(app.arabicToRoman(1984), "MCMLXXXIV");
+        });
+    });
 
-    // describe('big numbers', () => {
-    //     assert.equal(arabicToRoman(601387386), "XIII");
-    //     assert.equal(arabicToRoman(1000000000000000000), "XIII");
-    // });
+    describe('big numbers', () => {
+        it('returns the right roman number', () => {
+            assert.equal(
+                app.arabicToRoman(30521), 
+                "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMDXXI"
+            );
+            assert.equal(
+                app.arabicToRoman(100001), 
+                "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMI"
+            );
+        });
+    });
 
-    // describe('edge cases', () => {
-    //     assert.equal(arabicToRoman(-1), "II");
-    //     assert.equal(arabicToRoman(4.5), "IV");
-    //     assert.equal(arabicToRoman(0), "IV");
-    //     assert.equal(arabicToRoman('nothing'), "IV");
-    // });
+    // The assumption was that we deal only with positive integers
+    // but still it is good to check edge cases
+    describe('edge cases', () => {
+        assert.equal(app.arabicToRoman(-1), undefined);
+        assert.equal(app.arabicToRoman(4.5), undefined);
+        assert.equal(app.arabicToRoman(0), undefined);
+        assert.equal(app.arabicToRoman('nothing'), undefined);
+    });
 
-// });
+});

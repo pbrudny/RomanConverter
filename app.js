@@ -1,3 +1,10 @@
+/*
+    Algorithm:
+    find the highest value less or equal than the number
+    print the key
+    substract the value from the key
+    do it until number is 0
+*/
 const literalsMap = {
     "I": 1,
     "IV": 4,
@@ -14,32 +21,31 @@ const literalsMap = {
     "M": 1000
 }
 
-exports.arabicToRoman = function(number) {
-    // find the highest value less or equal than the number
-    // print the key
-    // substract that key
-    // do it until number is 0
-
-    let romanNotation = "";
-
-    while(number > 0) {
-        number = 0;
-        romanNotation += highestLiteral(number);
-        number 
-    }
-
-}
-
 exports.highestLiteral = function(number) {
-    let highestPair = [];
+    let highestPair = {};
 
-    Object.entries(literalsMap).forEach((pair) => {
-        if (pair[1] <= number) {
-           highestPair = pair;
+    Object.keys(literalsMap).forEach((literal) => {
+        if (literalsMap[literal] <= number) {
+           highestPair = {
+               literal: literal,
+               number: literalsMap[literal]
+           };
         }
     })
-    return {
-        literal: highestPair[0],
-        number: highestPair[1]
-    };
+    return highestPair;
+}
+
+exports.arabicToRoman = function(number) {
+    let romanNotation = "";
+   
+    if (!Number.isInteger(number) || number <= 0) {
+        return undefined;
+    }
+   
+    while(number > 0) {
+        let highestPair = this.highestLiteral(number);
+        romanNotation += highestPair.literal;
+        number -= highestPair.number;
+    }
+    return romanNotation;
 }
