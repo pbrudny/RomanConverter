@@ -5,6 +5,7 @@
   "author": "Piotr Brudny",
   "license": "MIT",
   "scripts": {
+    "convert": "node index",
     "test": "mocha"
   },
   "devDependencies": {
